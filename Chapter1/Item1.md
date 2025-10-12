@@ -13,7 +13,7 @@ type T is dependent not just on expr but also on ParamType in 3 following cases:
 
 Steps:
 1. If expr's type is a reference, ignore the reference part.
-2. pattern-match expr7s type against ParamType to determine T.
+2. pattern-match expr's type against ParamType to determine T.
 
 ```template<typename T> //function template
 void f(T& param);
@@ -25,7 +25,7 @@ const int cx = x;
 f(cx);// T is const int&
 
 const inst& rx = x;
-f(rx);//T is const int&//& of expr (rx) is ignored
+f(rx);//T is const int&. & of expr (rx) is ignored (step 1)
 
 
 template<typename T> //function template
@@ -38,7 +38,7 @@ const int cx = x;
 f(cx);// T is const int&
 
 const inst& rx = x;
-f(rx);//T is const int&//& of expr (rx) is ignored
+f(rx);//T is const int&. & of expr (rx) is ignored (Step 1)
 
 
 template<typename T> //function template
