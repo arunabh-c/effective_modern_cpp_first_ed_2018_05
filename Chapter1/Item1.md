@@ -56,6 +56,7 @@ Steps:
 1. If expr is lvalue, both T and ParamType are deduced as lvalue references.
 2. If expr is rvalue, Case 1 rules apply.
 
+```
 template<typename T> //function template
 void f(T&& param);
 
@@ -69,14 +70,15 @@ const inst& rx = x;
 f(rx);//T is const int&; ParamType is const int&
 
 f(27);T is int; ParamType is int&& 
+```
 
-
-Case 3: ParamType is Neither a Pointer nor a Reference
+## Case 3: ParamType is Neither a Pointer nor a Reference
 
 Steps:
 1. if expr type is reference, ignore it.
 2. If after ignoring reference, expr type is const or volatile, ignore that too.
 
+```
 template<typename T> //function template
 void f(T param);
 
@@ -92,9 +94,9 @@ f(rx);//T is int;
 const char* const ptr = "fun with ptrs";//const left of char means char string is const; const right of char means ptr address is const.
 
 f(ptr); //T is const char* ptr
+```
 
-
-Array Arguments:
+## Array Arguments:
 
 
 Ca
