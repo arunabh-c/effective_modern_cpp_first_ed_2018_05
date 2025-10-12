@@ -88,7 +88,7 @@ f(x);//T is int;
 const int cx = x;
 f(cx);// T is int;
 
-const inst& rx = x;
+const int& rx = x;
 f(rx);//T is int;
 
 const char* const ptr = "fun with ptrs";//const left of char means char string is const; const right of char means ptr address is const.
