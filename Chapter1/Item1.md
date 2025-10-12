@@ -1,10 +1,10 @@
-Type Deduction
+**Type Deduction**
 
-template<typename T> //function template
+``template<typename T> //function template
 void f(ParamType param);
 
 f(expr);//expr used to deduce 2 types: T and ParamType
-
+``
 type T is dependent not just on expr but also on ParamType in 3 following cases:
 
 Case 1: ParamType is reference or pointer
