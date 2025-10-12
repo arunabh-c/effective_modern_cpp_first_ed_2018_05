@@ -1,19 +1,19 @@
-**Type Deduction**
+#Type Deduction
 
-``template<typename T> //function template
+```template<typename T> //function template
 void f(ParamType param);
 
 f(expr);//expr used to deduce 2 types: T and ParamType
-``
+```
 type T is dependent not just on expr but also on ParamType in 3 following cases:
 
-Case 1: ParamType is reference or pointer
+##Case 1: ParamType is reference or pointer
 
 Steps:
 1. If expr's type is a reference, ignore the reference part.
 2. pattern-match expr7s type against ParamType to determine T.
 
-template<typename T> //function template
+```template<typename T> //function template
 void f(T& param);
 
 int x = 27;
@@ -46,10 +46,10 @@ int x = 27;
 f(&x);//T is int*
 
 const int* cx = &x;
-f(cx);// T is const int*
+f(cx);// T is const int*```
 
 
-Case 2: ParamType is Universal Reference
+##Case 2: ParamType is Universal Reference
 
 Steps:
 1. If expr is lvalue, both T and ParamType are deduced as lvalue references.
