@@ -1,6 +1,8 @@
 # Type Deduction
 
-```template<typename T> //function template
+
+```
+template<typename T> //function template
 void f(ParamType param);
 
 f(expr);//expr used to deduce 2 types: T and ParamType
