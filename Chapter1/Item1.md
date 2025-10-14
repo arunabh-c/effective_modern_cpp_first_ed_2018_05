@@ -100,6 +100,27 @@ f(ptr); //T is const char* ptr
 
 ## Array Arguments:
 
+```
+const char name[] = "J. P. Briggs"; //const char[13]
+const char * ptrToName = name; //array decays to pointer
 
-Ca
+template<typename T> //function template
+void f(T param);
+f(name); //name is array but T deduced as const char*
 
+template<typename T> //function template
+void f(T &param);
+f(name); //T deduced as const char[13] but name deduced as const char(&)[13]
+// the above is a trick to deduce the number of elements an array contains
+// as a compile time constant
+
+template<typename T, std::size_t N> //function template
+constexpr std::size_t arraysize(T (&)[N]) noexcept
+{ return N;}
+//constexpr causes N to be computed during compile time
+
+
+
+ 
+
+```
