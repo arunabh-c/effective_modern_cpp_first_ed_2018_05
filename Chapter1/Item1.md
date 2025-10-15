@@ -125,7 +125,7 @@ int mappedVals[arraysize(keyVals)];// 6 elements
 
 std::array<int, arraysize(keyVals)> mappedVals;
 ```
-# Function Arguments
+## Function Arguments
 
 Function Types decay to Function Pointers
 ```
