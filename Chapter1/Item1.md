@@ -118,9 +118,25 @@ template<typename T, std::size_t N> //function template
 constexpr std::size_t arraysize(T (&)[N]) noexcept
 { return N;}
 //constexpr causes N to be computed during compile time
+//noexcept  helps compiler generate better code
 
+int keyVals[] = {1, 2, 3, 4, 5, 6}; // 6 elements
+int mappedVals[arraysize(keyVals)];// 6 elements
 
+std::array<int, arraysize(keyVals)> mappedVals;
+```
+# Function Arguments
 
- 
+Function Types decay to Function Pointers
+```
+void someFunc(int, double);
 
+template<typename T> //function template
+void f1(T param);
+
+template<typename T> //function template
+void f2(T& param);
+
+f1(someFunc);//deduced as ptr-to-func. type is void(*)(int, double)
+f2(someFunc);//deduced as ref-to-func. type is void(&)(int, double)
 ```
