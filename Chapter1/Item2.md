@@ -47,7 +47,9 @@ void someFunc(int, double); //type is void(int, double)
 
 auto func1 = someFunc; //func1's type is void(*)(int, double)
 auto& func2 = someFunc;//func2's type is void(%)(int, double)
-
+```
+## Difference:
+```
 //Different ways to initialize int with value 27:
 int x1 = 27; //C++98
 int x2(27);  //C++98
