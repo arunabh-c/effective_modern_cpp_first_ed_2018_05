@@ -1,5 +1,8 @@
+```
 #include <iostream>
 #include <deque>
+
+//Examples of how decltype work:
 
 const int i = 0; //decltype(i) is const int
 //bool f(const Widget& w); //decltype(w) is const Widget&
@@ -20,6 +23,8 @@ struct Point {
 
 //vector<int> v; //decltype(v) is vector<int>
 //if (v[0] == 0) //decltype(v[0]) is int&
+
+//Detailed Nuance of Decltype:
 
 void authenticateUser(void) {}
 
@@ -76,3 +81,4 @@ int main()
 
 	return 0;
 }
+```
